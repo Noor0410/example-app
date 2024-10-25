@@ -10,26 +10,18 @@ use Illuminate\Validation\Rule;
 
 class StudentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $data = Student::get();
         return view('student.index',  compact('data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('student.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
         $validate = $request->validate([
@@ -57,18 +49,12 @@ class StudentController extends Controller
         return redirect(route('student.index'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit($id)
     {
         $data = Student::findOrFail($id);
         return view('student.create', compact('data'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request)
     {
         $request->validate([
@@ -103,9 +89,6 @@ class StudentController extends Controller
         return redirect(route('student.index'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy($id)
     {
         $data = Student::findOrFail($id);

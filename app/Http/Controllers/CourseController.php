@@ -18,10 +18,7 @@ class CourseController extends Controller
   public function create(){
       return view('course.create');}
 
-    /**
-     
-* Store a newly created resource in storage.*/
-  public function store(Request $request){  // Debugging the incoming form data//dd($request->all());
+  public function store(Request $request){  
 
             $validate = $request->validate([
             'title' => 'required|max:255',

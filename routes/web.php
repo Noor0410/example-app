@@ -14,9 +14,6 @@ Route::get('/post', function () {
     return view('post');
 });
 
-/*
-route::view(view ka naam,route ka naam) oopar wala kaam 1 line main */
-
 Route::middleware('auth')->name('student.')->prefix('student')->group(function() {
     Route::get('/', [StudentController::class, 'index'])->name('index');
     Route::get('create', [StudentController::class, 'create'])->name('create');
