@@ -1,0 +1,110 @@
+/* General Styles */
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero {
+    padding: 100px 0;
+    background-color: #f8f9fa;
+}
+
+/* About Section */
+.about {
+    background-color: #152e46 ;
+    padding: 80px 0;
+}
+
+/* Portfolio Section */
+.portfolio {
+    padding: 80px 0;
+}
+
+.card {
+    margin-bottom: 30px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 20px;
+}
+
+/* Footer */
+footer {
+    height: 130px;
+    background-color: #000000 ;
+    color: #fff;
+}
+main{
+    padding-bottom: 2rem;
+}
+
+
+.rounded-circle {
+    width: 150px; /* or any size you prefer */
+    height: 150px; /* ensure the height is the same as width */
+    object-fit: cover; /* this ensures the image covers the entire area */
+}
+
+.custom-navbar {
+    background-color:  #000000; /* Cyan-Blue color */
+}
+
+.navbar-nav .nav-link {
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+.navbar .collapse .navbar-nav .nav-item .nav-link{
+    color: #ffffff; /* Change color to yellow on hover */
+}
+
+.navbar .collapse .navbar-nav .nav-item .nav-link:hover {
+    color: #ffc93c; /* Change color to yellow on hover */
+}
+
+footer p {
+     margin-top: 2rem; 
+     margin-bottom: 0;
+}
+
+.col-md-6{
+    margin-top: 60px;
+}
+.row{
+    margin-top: 50px;
+}
+
+.t-shirt {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.t-shirt img {
+    width: 100%;
+}
+
+.t-shirt p {
+    margin: 10px 0;
+}
+
+.t-shirt button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+}
+
+a img {
+    transition: transform 0.2s; /* Animation */
+}
+
+a img:hover {
+    transform: scale(1.05); /* Zoom effect */
+}
