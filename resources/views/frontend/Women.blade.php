@@ -6,7 +6,7 @@
     <div class="row">
         <div class="col-md-3">
             <div class="t-shirt">
-                <a href="Contact.html">
+                <a href="{{url('/Contact')}}">
                     <img src="{{url('frontend/pictures/g1.png')}}" alt="T-Shirt 1">
                 </a>
                 <p>Red</p>
@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-3">
             <div class="t-shirt">
-                <a href="Contact.html">
+                <a href="{{url('/Contact')}}">
                     <img src="{{url('frontend/pictures/g2.png')}}" alt="T-Shirt 2">
                 </a>
                 <p>Black</p>
@@ -24,7 +24,7 @@
         </div>
         <div class="col-md-3">
             <div class="t-shirt">
-                <a href="Contact.html">
+                <a href="{{url('/Contact')}}">
                     <img src="{{url('frontend/pictures/g3.png')}}" alt="T-Shirt 3">
                 </a>
                 <p>Yellow</p>
@@ -33,7 +33,7 @@
         </div>
         <div class="col-md-3">
             <div class="t-shirt">
-                <a href="Contact.html">
+                <a href="{{url('/Contact')}}">
                     <img src="{{url('frontend/pictures/g4.png')}}" alt="T-Shirt 4">
                 </a>
                 <p>Navy</p>
@@ -42,7 +42,7 @@
         </div>
         <div class="col-md-3">
             <div class="t-shirt">
-                <a href="Contact.html">
+                <a href="{{url('/Contact')}}">
                     <img src="{{url('frontend/pictures/g5.png')}}" alt="T-Shirt 5">
                 </a>
                 <p>Cream</p>

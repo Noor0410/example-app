@@ -11,7 +11,19 @@ use app\Http\Controllers\Frontend\ShirtsController;
 use app\Http\Controllers\Frontend\AboutController;
 use app\Http\Controllers\Frontend\ContactController;
 
-// Route::get(uri: "/", [BoldWareController::class,"index"]);
+
+
+// Route::get('/', [BoldWareController::class, 'index'])->name('frontend.BoldWare');
+// Route::get('/Shirts', [ShirtsController::class, 'index'])->name('frontend.Shirts');
+// Route::get('/Women', [WomenController::class, 'index'])->name('frontend.Women');
+// Route::get('/Men', [MenController::class, 'index'])->name('frontend.Men');
+// Route::get('/Contact', [ContactController::class, 'index'])->name('frontend.Contact');
+// Route::get('/About', [AboutController::class, 'index'])->name('frontend.About');
+
+
+
+
+ //Route::get(uri: "/", [BoldWareController::class,"index"]);
 
 Route::get('/', function(){
 return view('frontend.BoldWare');

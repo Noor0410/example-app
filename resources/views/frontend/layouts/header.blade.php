@@ -52,8 +52,10 @@
                     <a class="nav-link" href="{{url('/Contact')}}">CONTACT</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url('/Login')}}">LOG IN</a>
+                    <a class="nav-link" href="{{route('login')}}">LOG IN</a>
                 </li>
             </ul>
         </div>
     </header>
+    
+    {{-- {{url('/Login')}} --}}
