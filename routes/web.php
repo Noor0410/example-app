@@ -10,47 +10,54 @@ use app\Http\Controllers\Frontend\WomenController;
 use app\Http\Controllers\Frontend\ShirtsController;
 use app\Http\Controllers\Frontend\AboutController;
 use app\Http\Controllers\Frontend\ContactController;
+use app\Http\Controllers\Frontend\Product_detailController;
 
 
-Route::get('/', [BoldWareController::class, 'index'])->name('frontend.BoldWare');
+// Route::get('/', [BoldWareController::class, 'index'])->name('frontend.BoldWare');
 
-Route::middleware(['auth'])->group(function () {
-    Route::get('/Men', [MenController::class, 'index'])->name('frontend.Men');
-   Route::get('/Women', [WomenController::class, 'index'])->name('frontend.Women');
-   Route::get('/About', [AboutController::class, 'index'])->name('frontend.About');
-   Route::get('/Contact', [ContactController::class, 'index'])->name('frontend.Contact');
-   Route::get('/Shirts', [ShirtsController::class, 'index'])->name('frontend.Shirts');
+// Route::middleware(['auth'])->group(function () {
+//   //  Route::get('/Men', [MenController::class, 'index'])->name('frontend.Men');
+//    Route::get('/Women', [WomenController::class, 'index'])->name('frontend.Women');
+//    Route::get('/About', [AboutController::class, 'index'])->name('frontend.About');
+//    Route::get('/Contact', [ContactController::class, 'index'])->name('frontend.Contact');
+//    Route::get('/Shirts', [ShirtsController::class, 'index'])->name('frontend.Shirts');
+// });
+
+
+
+Route::get('/', function () {
+    return view('frontend.BoldWare');
+});
+
+Route::get('/Men', function () {
+    return view('frontend.Men');
+});
+
+Route::get('/Women', function () {
+    return view('frontend.Women');
+});
+
+Route::get('/About', function () {
+    return view('frontend.About');
+});
+
+Route::get('/Contact', function () {
+    return view('frontend.Contact');
+});
+
+Route::get('/Shirts', function () {
+    return view('frontend.Shirts');
+});
+
+Route::get('/Product_detail',function(){
+    return view('frontend.Product_detail');
 });
 
 
 
-// Route::get('/', function(){
-// return view('frontend.BoldWare');
-// });
-
-// Route::get('/Men', function(){
-//     return view('frontend.Men');
+// Route::get('/Login', function(){
+//     return view('frontend.Login');
 //     });
-
-//     Route::get('/Women', function(){
-//         return view('frontend.Women');
-//         });
-
-//         Route::get('/About', function(){
-//             return view('frontend.About');
-//             });
-
-//             Route::get('/Contact', function(){
-//                 return view('frontend.Contact');
-//                 });
-
-//                 Route::get('/Shirts', function(){
-//                     return view('frontend.Shirts');
-//                     });
-
-                    // Route::get('/Login', function(){
-                    //     return view('frontend.Login');
-                    //     });
 
 
 
@@ -100,4 +107,4 @@ Route::middleware(['auth'])->group(function () {
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

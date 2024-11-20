@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{url('frontend/css/style.css')}}">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <style>
         .carousel-item {
             height: 60vh;

@@ -5,9 +5,6 @@
     <main>
         <!--Slider-->
 
-
-
-
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -47,7 +44,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <div class="t-shirt">
+                    <div class="t-shirt" >
                         <a href="{{url('/Contact')}}">
                             <img src="{{url('frontend/pictures/g1.png')}}" alt="T-Shirt 1">
                         </a>
@@ -122,3 +119,6 @@
         </div>
     </main>
      @endsection
+
+
+     {{-- onclick="window.location.href='{{url('/Product_detail')}}'" --}}
