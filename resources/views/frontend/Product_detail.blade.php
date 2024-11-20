@@ -1,8 +1,6 @@
 @extends('frontend.layouts.main')
 @section('main-container')
 
-<main>
-   
 <body>
     <div class="product-page">
         <div class="breadcrumb">
@@ -56,7 +54,4 @@
     </script>
 
 </body>
-
-</main>
-
 @endsection
