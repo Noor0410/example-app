@@ -108,3 +108,54 @@ a img {
 a img:hover {
     transform: scale(1.05); /* Zoom effect */
 }
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    overflow: hidden;
+    max-height: 40px;
+}
+
+.search-bar input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+
+/* Responsive Design */
+/* @media (max-width: 768px) {
+    .search-bar {
+        width: 100%;
+    }
+} */
+
+@media (max-width: 768px) {
+    .search-bar {
+      width: 100%;
+    }
+  
+    .search-button {
+      padding: 8px 16px; /* Adjust padding for smaller screens */
+      font-size: 14px;
+    }
+  }
+
+.search-button {
+    background-color: #5571ff; /* Blue */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+  flex-shrink: 0; /* Prevent the button from shrinking too much */
+    width: 80px;
+  }
+  
+  .search-button:hover {
+    background-color: #0056b3; /* Darker blue on hover   
+   */
+  }

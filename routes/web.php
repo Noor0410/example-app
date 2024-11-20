@@ -12,54 +12,63 @@ use app\Http\Controllers\Frontend\AboutController;
 use app\Http\Controllers\Frontend\ContactController;
 
 
+Route::get('/', [BoldWareController::class, 'index'])->name('frontend.BoldWare');
 
-// Route::get('/', [BoldWareController::class, 'index'])->name('frontend.BoldWare');
-// Route::get('/Shirts', [ShirtsController::class, 'index'])->name('frontend.Shirts');
-// Route::get('/Women', [WomenController::class, 'index'])->name('frontend.Women');
-// Route::get('/Men', [MenController::class, 'index'])->name('frontend.Men');
-// Route::get('/Contact', [ContactController::class, 'index'])->name('frontend.Contact');
-// Route::get('/About', [AboutController::class, 'index'])->name('frontend.About');
-
-
-
-
- //Route::get(uri: "/", [BoldWareController::class,"index"]);
-
-Route::get('/', function(){
-return view('frontend.BoldWare');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/Men', [MenController::class, 'index'])->name('frontend.Men');
+   Route::get('/Women', [WomenController::class, 'index'])->name('frontend.Women');
+   Route::get('/About', [AboutController::class, 'index'])->name('frontend.About');
+   Route::get('/Contact', [ContactController::class, 'index'])->name('frontend.Contact');
+   Route::get('/Shirts', [ShirtsController::class, 'index'])->name('frontend.Shirts');
 });
 
-Route::get('/Men', function(){
-    return view('frontend.Men');
-    });
-
-    Route::get('/Women', function(){
-        return view('frontend.Women');
-        });
-
-        Route::get('/About', function(){
-            return view('frontend.About');
-            });
-
-            Route::get('/Contact', function(){
-                return view('frontend.Contact');
-                });
-
-                Route::get('/Shirts', function(){
-                    return view('frontend.Shirts');
-                    });
-
-                    Route::get('/Login', function(){
-                        return view('frontend.Login');
-                        });
-    
-// Route::get('/', function () {
 
 
-
-// Route::get('/', function () {
-//     return view('layouts.web');
+// Route::get('/', function(){
+// return view('frontend.BoldWare');
 // });
+
+// Route::get('/Men', function(){
+//     return view('frontend.Men');
+//     });
+
+//     Route::get('/Women', function(){
+//         return view('frontend.Women');
+//         });
+
+//         Route::get('/About', function(){
+//             return view('frontend.About');
+//             });
+
+//             Route::get('/Contact', function(){
+//                 return view('frontend.Contact');
+//                 });
+
+//                 Route::get('/Shirts', function(){
+//                     return view('frontend.Shirts');
+//                     });
+
+                    // Route::get('/Login', function(){
+                    //     return view('frontend.Login');
+                    //     });
+
+
+
+
+// // Public Routes
+
+// Route::get('/login', [PageController::class, 'login'])->name('login');
+
+// // Authenticated Routes
+
+// // Example additional grouped routes for modularity
+//  Route::middleware(['auth', 'verified'])->group(function () {
+//      Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
+//  });
+
+
+
+
 
 
 // Route::get('/post', function () {

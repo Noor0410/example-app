@@ -30,10 +30,17 @@
     <!-- Header -->
     <header class="navbar navbar-expand-lg navbar-dark custom-navbar">
         <a class="navbar-brand" href="{{url('/')}}"><img src="{{url('frontend/pictures/logo.png')}}" alt="Brand logo " style="width: 120px;"></a>
+
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button class="search-button">Search</button>
+        </div>
+            
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
+        
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
