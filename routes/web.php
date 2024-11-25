@@ -3,7 +3,9 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProductController;
 use app\Http\Controllers\Frontend\BoldWareController;
 use app\Http\Controllers\Frontend\MenController;
 use app\Http\Controllers\Frontend\WomenController;
@@ -55,56 +57,66 @@ Route::get('/Product_detail',function(){
 
 
 
-// Route::get('/Login', function(){
-//     return view('frontend.Login');
-//     });
+// assignment 2
+
+Route::resource('products', ProductController::class);
+
+// Frontend route (for customers)
+Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+
+// Admin routes (no "admin" folder in views)
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin/products', [ProductController::class, 'adminIndex'])->name('admin.products.index');
+    Route::get('/admin/products/create', [ProductController::class, 'create'])->name('admin.products.create');
+    Route::post('/admin/products', [ProductController::class, 'store'])->name('admin.products.store');
+    Route::get('/admin/products/{product}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
+    Route::put('/admin/products/{product}', [ProductController::class, 'update'])->name('admin.products.update');
+    Route::delete('/admin/products/{product}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+});
+
+     // before
 
 
 
 
-// // Public Routes
-
-// Route::get('/login', [PageController::class, 'login'])->name('login');
-
-// // Authenticated Routes
-
-// // Example additional grouped routes for modularity
-//  Route::middleware(['auth', 'verified'])->group(function () {
-//      Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
-//  });
-
-
-
-
-
-
-// Route::get('/post', function () {
+     // Route::get('/post', function () {
 //     return view('post');
 // });
 
-// Route::middleware('auth')->name('student.')->prefix('student')->group(function() {
-//     Route::get('/', [StudentController::class, 'index'])->name('index');
-//     Route::get('create', [StudentController::class, 'create'])->name('create');
-//     Route::post('store', [StudentController::class, 'store'])->name('store');
-//     Route::get('edit/{id}', [StudentController::class, 'edit'])->name('edit');
-//     Route::post('update', [StudentController::class, 'update'])->name('update');
-//     Route::get('destroy/{id}', [StudentController::class, 'destroy'])->name('destroy');
-// });
+Route::middleware('auth')->name('student.')->prefix('student')->group(function() {
+    Route::get('/', [StudentController::class, 'index'])->name('index');
+    Route::get('create', [StudentController::class, 'create'])->name('create');
+    Route::post('store', [StudentController::class, 'store'])->name('store');
+    Route::get('edit/{id}', [StudentController::class, 'edit'])->name('edit');
+    Route::post('update', [StudentController::class, 'update'])->name('update');
+    Route::get('destroy/{id}', [StudentController::class, 'destroy'])->name('destroy');
+});
 
-// Route::middleware('auth')->name('course.')->prefix('course')->group(function() {
-//     Route::get('/', [CourseController::class, 'index'])->name('index');
-//     Route::get('create', [CourseController::class, 'create'])->name('create');
-//     Route::post('store', [CourseController::class, 'store'])->name('store');
-// });
 
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+Route::middleware('auth')->name('course.')->prefix('course')->group(function() {
+    Route::get('/', [CourseController::class, 'index'])->name('index');
+    Route::get('create', [CourseController::class, 'create'])->name('create');
+    Route::post('store', [CourseController::class, 'store'])->name('store');
+});
 
-// Route::middleware('auth')->group(function () {
-//     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-//     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-//     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-// });
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
 
 require __DIR__ . '/auth.php';
+
+
+   //  Route::get('/login', [PageController::class, 'login'])->name('login');
+
+    //  // Authenticated Routes
+     
+    //  // Example additional grouped routes for modularity
+    //   Route::middleware(['auth', 'verified'])->group(function () {
+    //       Route::get('/dashboard', [PageController::class, 'dashboard'])->name('dashboard');
+    //   });

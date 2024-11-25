@@ -62,6 +62,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{route('login')}}">LOG IN</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{route('register')}}">LOG IN</a>
+                </li>
             </ul>
         </div>
     </header>
