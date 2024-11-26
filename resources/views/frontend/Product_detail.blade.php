@@ -9,12 +9,12 @@
 
         <div class="product-details">
             <div class="product-image">
-                <img src="pictures/sample1.png" alt="Men's Fashion T-Shirt" id="mainImage">
+                <img src="frontend/pictures/sample1.png" alt="Men's Fashion T-Shirt" id="mainImage">
                 <div class="thumbnail-images">
-                    <img src="pictures/sample2.png" alt="Blue T-Shirt" onclick="changeImage('pictures/sample2.png')">
-                    <img src="pictures/g2.png" alt="White T-Shirt" onclick="changeImage('pictures/g2.png')">
-                    <img src="pictures/g3.png" alt="Red T-Shirt" onclick="changeImage('pictures/g3.png')">
-                    <img src="pictures/g4.png" alt="Green T-Shirt" onclick="changeImage('pictures/g4.png')">
+                    <img src="frontend/pictures/sample2.png" alt="Blue T-Shirt" onclick="changeImage('frontend/pictures/sample2.png')">
+                    <img src="frontend/pictures/g2.png" alt="White T-Shirt" onclick="changeImage('frontend/pictures/g2.png')">
+                    <img src="frontend/pictures/g3.png" alt="Red T-Shirt" onclick="changeImage('frontend/pictures/g3.png')">
+                    <img src="frontend/pictures/g4.png" alt="Green T-Shirt" onclick="changeImage('frontend/pictures/g4.png')">
                 </div>
             </div>
 

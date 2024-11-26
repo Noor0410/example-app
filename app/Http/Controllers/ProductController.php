@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
-        return view('products.index', compact('products'));
+        return view('frontend.products.index', compact('products'));
     }
     
 
@@ -22,7 +22,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        return view('frontend.products.create');
     }
     /**
      * Store a newly created resource in storage.
@@ -38,7 +38,7 @@ class ProductController extends Controller
     
         Product::create($validatedData);
     
-        return redirect()->route('products.index')->with('success', 'Product added successfully!');
+        return redirect()->route('frontend.products.index')->with('success', 'Product added successfully!');
     }
 
     /**
@@ -55,7 +55,7 @@ class ProductController extends Controller
     public function edit($id)
 {
     $product = Product::findOrFail($id);
-    return view('products.edit', compact('product'));
+    return view('frontend.products.edit', compact('product'));
 }
 
     /**
@@ -73,7 +73,7 @@ class ProductController extends Controller
     $product = Product::findOrFail($id);
     $product->update($validatedData);
 
-    return redirect()->route('products.index')->with('success', 'Product updated successfully!');
+    return redirect()->route('frontend.products.index')->with('success', 'Product updated successfully!');
 }
 
     /**
@@ -84,6 +84,6 @@ class ProductController extends Controller
     $product = Product::findOrFail($id);
     $product->delete();
 
-    return redirect()->route('products.index')->with('success', 'Product deleted successfully!');
+    return redirect()->route('frontend.products.index')->with('success', 'Product deleted successfully!');
 }
 }

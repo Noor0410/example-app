@@ -35,4 +35,5 @@
         <button type="submit" class="btn btn-success">Add Product</button>
     </form>
 </div>
+
 @endsection
